@@ -1,6 +1,51 @@
 body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    color:brown;
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
 }
+.wrapper {
+ max-width: 80%;
+ margin: 0 auto;
+}
+.accordions {
+    font-weight: 500;
+   }
+label {
+    width: 100%;
+    padding: 1em;
+   }
+label:active .title .txt{
+ color: rgb(157, 198, 70);
+}
+label:active img {
+ opacity: 0.5;
+}
+input {
+ display: none;
+}
+input ~ img {
+ display: block;
+ margin: 0 auto;
+ width: 0;
+ transition: all ease-out 0.6s;
+}
+input:checked ~ img {
+ display: block;
+ margin: 0 auto;
+ width: 80%;
+}
+input:checked ~ .title .icon {
+ transform: rotate(45deg);
+}
+.title {
+ display: flex;
+ justify-content: space-between;
+ border-top: 0.2em solid rgb(237, 20, 20);
+}
+.txt,
+.icon {
+ font-size: 2.5em;
+ transition: all ease 0.5s;
+}
+
+
