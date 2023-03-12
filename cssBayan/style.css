@@ -47,5 +47,23 @@ input:checked ~ .title .icon {
  font-size: 2.5em;
  transition: all ease 0.5s;
 }
-
+@media (hover: hover) {
+    label:hover {
+     cursor: pointer;
+    }
+    label:hover .icon {
+     transform: rotate(45deg);
+    }
+    label:hover img {
+     display: block;
+     margin: 0 auto;
+     width: 80%;
+    }
+    .accordions:not(:hover) .title .icon {
+     display: none;
+    }
+    .accordions:not(:hover) input:not(:checked) ~ .title .txt {
+     color: rgb(157, 198, 70);
+    }
+}
 
