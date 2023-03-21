@@ -1,0 +1,88 @@
+body {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+.wrapper {
+ max-width: 80%;
+ margin: 0 auto;
+}
+.accordions {
+    font-weight: 500;
+   }
+label {
+    width: 100%;
+    padding: 1em;
+   }
+label:active .title .txt{
+ color: rgb(157, 198, 70);
+}
+label:active img {
+ opacity: 0.5;
+}
+input {
+ display: none;
+}
+input ~ img {
+ display: block;
+ margin: 0 auto;
+ width: 0;
+ transition: all ease-out 0.6s;
+}
+input:checked ~ img {
+ display: block;
+ margin: 0 auto;
+ width: 80%;
+}
+input:checked ~ .title .icon {
+ transform: rotate(45deg);
+}
+.title {
+ display: flex;
+ justify-content: space-between;
+ border-top: 0.1em solid rgb(237, 20, 20);
+}
+.txt,
+.icon {
+ font-size: 2.5em;
+ transition: all ease 0.5s;
+}
+@media (any-hover: hover) {
+    label:hover {
+     cursor: pointer;
+    }
+    label:hover .icon {
+     transform: rotate(45deg);
+    }
+    label:hover img {
+     display: block;
+     margin: 0 auto;
+     width: 80%;
+    }
+    .accordions:not(:hover) .title .icon {
+     display: none;
+    }
+    .accordions:not(:hover) input:not(:checked) ~ .title .txt {
+     color: rgb(157, 198, 70);
+    }
+} 
+@media (max-width: 820px) {
+    .txt,
+    .icon {
+     font-size: 1.5em;
+    }
+    .wrapper {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}   
+@media (max-width: 320px) {
+    .txt,
+    .icon {
+     font-size: 1em;
+    }
+    .wrapper {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
